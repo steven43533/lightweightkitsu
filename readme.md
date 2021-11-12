@@ -1,5 +1,3 @@
-# LightweightKitsu
-
 # Project 2 Pitch Guidelines
 Project Description and Pitch Guidelines for SEIR SEA P2
 
@@ -21,7 +19,8 @@ In designing and building your project, you will start by forking and cloneing t
 * https://www.figma.com/file/ZC2JRM7QVEJUrINN741ORL/Project-2-Wireframe?node-id=0%3A1
 5. API BEING USED: 
 * https://kitsu.docs.apiary.io/#
-6. ERD
+6. ERD LINK: 
+https://lucid.app/lucidchart/3b93a7bb-d85b-4a08-936f-b44f588fe357/edit?viewport_loc=472%2C-113%2C1175%2C1374%2C0_0&invitationId=inv_8f92a812-8c5d-4583-a9eb-827e426667d5
 7. Example of how to call/invoke your API, and a description of what data comes back:
 Call API with: https://kitsu.io/api/edge/
 
@@ -32,9 +31,8 @@ returns the anime with the title of samurai champloo(Tested with Postman)
 * Be able to add an anime to your favorites list.
 * On your favorites page show certain details about each anime.
 * Be able to delete favorites from your list.
-* A button that lands on you a random anime page to check out.
+* Wishlist(want to watch) page that stores animes you'd like to watch later
 9. STRECH GOALS:
-* User login
 * Dark mode?
 * Make links to certain characters wikipedia.
 10. Any potential roadblocks?
