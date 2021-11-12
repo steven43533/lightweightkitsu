@@ -44,7 +44,7 @@ app.use('/auth', require('./controllers/auth'))
 
 // home route
 app.get('/', (req, res)=>{
-    res.render('home')
+    res.render('index')
 })
 
 // profile route
