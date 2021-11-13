@@ -15,4 +15,26 @@ router.get('/results', function(req,res) {
     })
 })
 
+router.get('/:anime_id', function(req,res) {
+    let animeId = req.params.anime_id
+
+    axios.get(`https://kitsu.io/api/edge/anime/${animeId}`)
+        .then(apiRes => {
+            //console.log('api data for this anime: ', apiRes.data);
+            let attributes = apiRes.data.data.attributes
+            let animeTitle = attributes.titles.en_jp
+            let synopsis = attributes.synopsis
+            let poster = attributes.posterImage.small
+            let avgRating = attributes.averageRating
+            let status = attributes.status
+            
+            res.render('details', {animeTitle: animeTitle, synopsis: synopsis, poster: poster, avgRating: avgRating, status: status})
+        })
+        .catch(err => {
+            console.log(err);
+        })
+})
+
+
+
 module.exports = router

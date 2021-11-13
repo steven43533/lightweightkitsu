@@ -1,12 +1,18 @@
-<% if(results === undefined) {%>
+
+<% if(results.length == 0) {%>
     <h3>No Animes Found</h3>
     <small>Search another term</small>
 
     <% } else {%>
+        <h3>Search Results...</h2>
         <% results.forEach(function(result) { %>
                 <li>
-                    <a href="/animeSearch/<%=result.id%>"><%= result.attributes.slug %> </a>
-                    
+                    <a href="/animeSearch/<%=result.id%>"><%= result.attributes.titles.en_jp %></a>
+                    <br>
+                    <img src="<%=  result.attributes.posterImage.tiny %>" alt="post of searched anime">
+                    <small><%= result.attributes.synopsis %> </small>
+                    <br>
+                    <small>Average Rating: </small><%= result.attributes.averageRating %>
                 </li>
         <% }) %> 
 
