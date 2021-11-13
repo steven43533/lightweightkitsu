@@ -47,6 +47,8 @@ app.get('/', (req, res)=>{
     res.render('index')
 })
 
+// route to that leads to a page showing searched anime
+app.use('/animeSearch', require('./controllers/animeRoutes'))
 // profile route
 app.get('/profile', isLoggedIn, (req, res)=>{
     res.render('profile')
