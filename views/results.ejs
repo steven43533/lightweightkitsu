@@ -1,0 +1,13 @@
+<% if(results === undefined) {%>
+    <h3>No Animes Found</h3>
+    <small>Search another term</small>
+
+    <% } else {%>
+        <% results.forEach(function(result) { %>
+                <li>
+                    <a href="/animeSearch/<%=result.id%>"><%= result.attributes.slug %> </a>
+                    
+                </li>
+        <% }) %> 
+
+    <% }  %> 

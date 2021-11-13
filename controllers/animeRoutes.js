@@ -7,6 +7,8 @@ router.get('/results', function(req,res) {
     axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${animeTitle}`)
     .then(apiResults => {
         console.log(apiResults.data);
+        const results = apiResults.data.data
+        res.render('results', {results: results})
     })
     .catch(err => {
         console.log(err);
