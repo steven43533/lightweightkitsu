@@ -1,12 +1,23 @@
+<h1>
+    <%= animeTitle %>
+</h1>
 <img src="<%= poster %> " alt="poster of anime">
 
-<h1>
-    <a href="/animeSearch/<%= animeTitle %> ">
-        <%= animeTitle %> 
-    </a>
-</h1>
+
+<form method="POST" action="">
+    <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
+    <button type="submit">Favorite this anime!</button>
+</form>
+
+<h2>Status: <small><%= status %></small> </h2>
+
+<small>Episode Count: <%= epCount %> </small>
+<h3>Average Rating: </h3>
+<%= avgRating %> 
+<h2>Synopsis: </h2>
+<p><%= synopsis %> </p>
 
 
-<h3>
-    <%= synopsis %> 
-</h3>
+
+
+

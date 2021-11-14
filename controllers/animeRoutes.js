@@ -27,8 +27,9 @@ router.get('/:anime_id', function(req,res) {
             let poster = attributes.posterImage.small
             let avgRating = attributes.averageRating
             let status = attributes.status
+            let epCount = attributes.episodeCount
             
-            res.render('details', {animeTitle: animeTitle, synopsis: synopsis, poster: poster, avgRating: avgRating, status: status})
+            res.render('details', {animeTitle: animeTitle, synopsis: synopsis, poster: poster, avgRating: avgRating, status: status, epCount: epCount})
         })
         .catch(err => {
             console.log(err);
