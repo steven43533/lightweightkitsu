@@ -36,8 +36,11 @@ router.get('/:anime_id', function(req,res) {
             
             res.render('details', {animeTitle: animeTitle, 
                 synopsis: synopsis, 
-                poster: poster, avgRating: avgRating, status: status,
-                epCount: epCount, animeId: animeId, 
+                poster: poster, 
+                avgRating: avgRating, 
+                status: status,
+                epCount: epCount, 
+                animeId: animeId, 
                 favoritesCount: favoritesCount,
                 startDate: startDate, endDate: endDate})
         })

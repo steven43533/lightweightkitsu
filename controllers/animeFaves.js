@@ -18,6 +18,7 @@ router.post('/addAsFavorite', (req,res) => {
     console.log('this is anime data', data);
     db.faveAnime.create({
         name: data.animeTitle,
+        animeId: data.animeId,
         userId: res.locals.currentUser.id,
         posterImage: data.poster,
         favoriteCount: data.favoritesCount,
@@ -25,13 +26,26 @@ router.post('/addAsFavorite', (req,res) => {
         endDate: data.endDate
     })
     .then(createdFave => {
-        res.redirect(`/favoritedAnime/${createdFave.id}`)
+        res.redirect(`/favoritedAnime/`)
     })
     .catch(error => {
         console.log(error);
     })
     .finally(created => {
         console.log(created);
+    })
+})
+
+router.delete('/:id', (req,res) => {
+    db.faveAnime.destroy({
+        where: {id: req.params.id}
+    })
+    .then(deletedItem => {
+        console.log('You removed ', deletedItem);
+        res.redirect('/favoritedAnime/')
+    })
+    .catch(error => {
+        console.log(error);
     })
 })
 

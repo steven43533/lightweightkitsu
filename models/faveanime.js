@@ -16,6 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   faveAnime.init({
     name: DataTypes.STRING,
+    //ADDED AFTER TABLE CREATION
+    animeId: DataTypes.INTEGER,
+    //^^^^^^^^^^^^^^^^^^^^^^^^
     synopsis: DataTypes.STRING,
     userId: DataTypes.INTEGER,
     posterImage: DataTypes.STRING,
