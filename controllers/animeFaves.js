@@ -4,8 +4,11 @@ const db = require('../models')
 
 // index route to show all the users favorites 
 router.get('/', (req,res) =>{
-    db.faveAnime.findAll()
+    db.faveAnime.findAll({
+        where: { userId: res.locals.currentUser.id }
+    })
         .then(faves => {
+            console.log(faves);
             res.render('indexFaves', {results: faves})
         })
         .catch(error => {
