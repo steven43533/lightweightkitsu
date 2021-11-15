@@ -34,7 +34,12 @@ router.get('/:anime_id', function(req,res) {
             let startDate = attributes.startDate
             let endDate = attributes.endDate
             
-            res.render('details', {animeTitle: animeTitle, synopsis: synopsis, poster: poster, avgRating: avgRating, status: status, epCount: epCount, animeId: animeId, favoritesCount: favoritesCount, startDate: startDate, endDate: endDate})
+            res.render('details', {animeTitle: animeTitle, 
+                synopsis: synopsis, 
+                poster: poster, avgRating: avgRating, status: status,
+                epCount: epCount, animeId: animeId, 
+                favoritesCount: favoritesCount,
+                startDate: startDate, endDate: endDate})
         })
         .catch(err => {
             console.log(err);

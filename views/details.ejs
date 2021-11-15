@@ -3,7 +3,7 @@
 </h1>
 <img src="<%= poster %> " alt="poster of anime">
 
-
+<% if (currentUser) {%> 
 <form method="POST" action="/favoritedAnime/addAsFavorite">
     <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
     <input hidden type="text" name="animeId" value='<%= animeId %>'>
@@ -18,6 +18,7 @@
     <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
     <button type="submit">Want To Watch!</button>
 </form>
+<% } %> 
 
 <h2>Status: <small><%= status %></small> </h2>
 
