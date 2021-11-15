@@ -28,7 +28,7 @@ router.post('/addToWatchList', (req,res) => {
         synopsis: data.synopsis
     })
     .then(createdFave => {
-        res.redirect(`/addToWatchList/`)
+        res.redirect(`/watchlist/`)
     })
     .catch(error => {
         console.log(error);
@@ -38,6 +38,18 @@ router.post('/addToWatchList', (req,res) => {
     })
 })
 
+router.delete('/:id', (req,res) => {
+    db.wantToWatch.destroy({
+        where: {id: req.params.id}
+    })
+    .then(deletedItem => {
+        console.log('You removed ', deletedItem);
+        res.redirect('/watchlist/')
+    })
+    .catch(error => {
+        console.log(error);
+    })
+})
 
 
 module.exports = router

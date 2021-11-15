@@ -1,0 +1,12 @@
+<h1>Your Want To Watch List!</h1>
+
+<% results.forEach(result => { %>
+
+    <img src="<%=result.posterImage%>" alt="post of searched anime">
+    <h3>
+        <a href="/animeSearch/<%= result.animeId %> "> <%= result.name %> </a>
+    </h3>
+    <form action="/watchlist/<%= result.id %>?_method=DELETE" method="POST">
+        <button type="submit">Remove from Want To Watch List</button>
+    </form>
+<% }) %>
