@@ -13,4 +13,9 @@ router.get('/', (req,res) =>{
         })
 })
 
+router.post('/addAsFavorite', (req,res) => {
+    const data = JSON.parse(JSON.stringify(req.body))
+    console.log('this is anime data', data);
+})
+
 module.exports = router

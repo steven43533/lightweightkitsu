@@ -4,9 +4,19 @@
 <img src="<%= poster %> " alt="poster of anime">
 
 
+<form method="POST" action="/favoritedAnime/addAsFavorite">
+    <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
+    <input hidden type="text" name="animeId" value='<%= animeId %>'>
+    <input hidden type="text" name="poster" value='<%= poster %>'>
+    <input hidden type="text" name="avgRating" value='<%= avgRating %>'>
+    <input hidden type="text" name="favoritesCount" value='<%= favoritesCount %>'>
+    <input hidden type="text" name="startDate" value='<%= startDate %>'>
+    <input hidden type="text" name="endDate" value='<%= endDate %>'>
+    <button type="submit">Add to your favorites!</button>
+</form>
 <form method="POST" action="">
     <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
-    <button type="submit">Favorite this anime!</button>
+    <button type="submit">Want To Watch!</button>
 </form>
 
 <h2>Status: <small><%= status %></small> </h2>

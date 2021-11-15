@@ -1,0 +1,10 @@
+<h1>Your favorited animes</h1>
+
+<% results.forEach(result => { %>
+    <h3>
+        <a href="/animeSearch/<%= result.id %> "> <%= result.attributes.titles.en_jp %> </a>
+    </h3>
+    <form action="/favoritedAnime/<%= result.id %>?_method=DELETE" method="POST">
+        <button type="submit">Remove from Favorites</button>
+    </form>
+<% }) %>
