@@ -14,8 +14,11 @@
     <input hidden type="text" name="endDate" value='<%= endDate %>'>
     <button type="submit">Add to your favorites!</button>
 </form>
-<form method="POST" action="">
+<form method="POST" action="/wantToWatch/addToWatchList">
     <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
+    <input hidden type="text" name="animeId" value='<%= animeId %>'>
+    <input hidden type="text" name="synopsis" value='<%= synopsis %>'>
+    <input hidden type="text" name="poster" value='<%= poster %>'>
     <button type="submit">Want To Watch!</button>
 </form>
 <% } %> 
