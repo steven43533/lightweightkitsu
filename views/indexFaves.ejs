@@ -1,6 +1,8 @@
 <h1>Your favorited animes</h1>
 
 <% results.forEach(result => { %>
+
+    <img src="<%=result.posterImage%>" alt="post of searched anime">
     <h3>
         <a href="/animeSearch/<%= result.animeId %> "> <%= result.name %> </a>
     </h3>
