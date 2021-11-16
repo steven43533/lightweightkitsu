@@ -16,7 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   };
   wantToWatch.init({
     name: DataTypes.STRING,
-    synopsis: DataTypes.STRING,
+    //vvvvvvvvvvvvvvvvvvvvvvv
+    synopsis: DataTypes.STRING, // <- added after inital creation table 
+    //^^^^^^^^^^^^^^^^^^^^^^^^
     posterImage: DataTypes.STRING,
     userId: DataTypes.INTEGER,
     animeId: DataTypes.INTEGER
