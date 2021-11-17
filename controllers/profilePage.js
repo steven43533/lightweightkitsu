@@ -8,6 +8,8 @@ router.get('/', (req, res) => {
     res.render("profile")
 })
 
+// I have a 50% understanding of how I got this work, but it works
+// ¯\_(ツ)_/¯
 router.patch('/:id', (req,res) => {
     const bioBox = JSON.parse(JSON.stringify(req.body))
     Object.keys(bioBox).forEach(function (key) {
@@ -32,6 +34,7 @@ router.patch('/:id', (req,res) => {
         })
         })
 })
+// ¯\_(ツ)_/¯
 
 
 module.exports = router
