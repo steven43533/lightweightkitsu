@@ -9,17 +9,24 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous">
 </head>
-
+<style>
+h1 {
+  font-size: 72px;
+  background: -webkit-linear-gradient(rgb(240, 127, 20), rgb(244, 2, 2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>
 <body>
 <div
   class="bg-image"
   style="
-    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+    background-image: url('https://i.postimg.cc/L8wLWPqP/site-Background.jpg');
     height: 100vh;
   "
 >
   <div class="titlePage-Picture">
-    <h1 class="display-1 text-center">LightweightKitsu<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Stoned_Fox_.jpg"
+    <h1 class="display-1 text-center">LightweightKitsu<img src="https://i.postimg.cc/MG6MNGsx/Stoned-Fox-removebg-preview.png"
       style="width: 100px; height: 100px"
       class="" alt="stoned fox"></h1>
   </div>
@@ -41,19 +48,19 @@
                 
               <% } else { %>
                 <li class="nav-item">
-                  <a class="nav-link" href="/">Home</a>
+                  <a class="nav-link text-light" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/profile">Profile</a>
+                  <a class="nav-link text-light" href="/profile">Profile</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/favoritedAnime">Favorites</a>
+                  <a class="nav-link text-light" href="/favoritedAnime">Favorites</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/watchlist">Want To Watch</a>
+                  <a class="nav-link text-light" href="/watchlist">Want To Watch</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/auth/logout">Logout</a>
+                  <a class="nav-link text-light" href="/auth/logout">Logout</a>
                 </li>
               <% } %>
             </ul>
