@@ -59,6 +59,9 @@ app.use('/favoritedAnime', require('./controllers/animeFaves'))
 // route for watch list
 app.use('/watchlist', require('./controllers/watchList'))
 
+// route for profile
+app.use('/profile', require('./controllers/profilePage'))
+
 // profile route
 app.get('/profile', isLoggedIn, (req, res)=>{
     res.render('profile')
