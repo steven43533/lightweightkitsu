@@ -9,36 +9,51 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous">
 </head>
+
 <body>
+<div
+  class="bg-image"
+  style="
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+    height: 100vh;
+  "
+>
+  <div class="titlePage-Picture">
+    <h1 class="display-1 text-center">LightweightKitsu<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Stoned_Fox_.jpg"
+      style="width: 100px; height: 100px"
+      class="" alt="stoned fox"></h1>
+  </div>
     <header>
-        <h1 class="display-1 text-center">LightweightKitsu</h1>
         <nav>
-            <ul class="nav justify-content-center nav-fill">
+            <ul class="nav justify-content-center">
               <% if (!currentUser) { %>
-                <li>
-                  <a href="/auth/signup">Signup</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home</a>
                 </li>
-                <li>
-                  <a href="/auth/login">Login</a>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="/auth/login">Login</a>
                 </li>
-                <li>
-                  <a href="/">Home</a>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/auth/signup">Signup</a>
                 </li>
+                
               <% } else { %>
-                <li>
-                  <a href="/auth/logout">Logout</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Home</a>
                 </li>
-                <li>
-                  <a href="/profile">Profile</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="/profile">Profile</a>
                 </li>
-                <li>
-                  <a href="/">Home</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="/favoritedAnime">Favorites</a>
                 </li>
-                <li>
-                  <a href="/favoritedAnime">Favorites</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="/watchlist">Want To Watch</a>
                 </li>
-                <li>
-                  <a href="/watchlist">Want To Watch</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="/auth/logout">Logout</a>
                 </li>
               <% } %>
             </ul>
@@ -47,5 +62,6 @@
     </header>
     <%- include('partials/alerts') %>
       <%- body %>
+</div>
 </body>
 </html>
