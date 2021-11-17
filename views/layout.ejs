@@ -11,22 +11,39 @@
 </head>
 <body>
     <header>
-        <h1>LightweightKitsu</h1>
+        <h1 class="display-1 text-center">LightweightKitsu</h1>
         <nav>
-            <ul>
+            <ul class="nav justify-content-center nav-fill">
               <% if (!currentUser) { %>
-                <li><a href="/auth/signup">Signup</a></li>
-                <li><a href="/auth/login">Login</a></li>
-                <li><a href="/">Home</a></li>
+                <li>
+                  <a href="/auth/signup">Signup</a>
+                </li>
+                <li>
+                  <a href="/auth/login">Login</a>
+                </li>
+                <li>
+                  <a href="/">Home</a>
+                </li>
               <% } else { %>
-                <li><a href="/auth/logout">Logout</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/">Home</a></li>
-                <li><a href="/favoritedAnime">Favorites</a></li>
-                <li><a href="/watchlist">Want To Watch</a></li>
+                <li>
+                  <a href="/auth/logout">Logout</a>
+                </li>
+                <li>
+                  <a href="/profile">Profile</a>
+                </li>
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a href="/favoritedAnime">Favorites</a>
+                </li>
+                <li>
+                  <a href="/watchlist">Want To Watch</a>
+                </li>
               <% } %>
             </ul>
           </nav>
+          
     </header>
     <%- include('partials/alerts') %>
       <%- body %>
