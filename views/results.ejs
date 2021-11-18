@@ -23,28 +23,42 @@
     grid-area: "result";
 }
 
+.synopsisBox {
+    outline: 2px solid orange;
+}
+
 
 
 
 </style>
 
 <% if(results.length == 0) {%>
-    <h3>No Animes Found</h3>
-    <small>Search another term</small> 
+    <h3 class="text-center">No Animes Found, search another term</h3>
+    <div class="text-center">
+        <form class="justify-content-center text-light" method="GET" action="/animeSearch/results">
+            <label for="anime title input"></label>
+            <input class="form control form-control-lg text-center col-5" type="text" name="animeTitle" placeholder="Anime Title">
+            <br>
+            <br>
+            <input class="btn btn-info" type="submit">
+        </form>
+    </div>
 
     <% } else {%>
-        <h3 style="color:whitesmoke;">Search Results...</h2>
+        <h5 style="color:whitesmoke;">Search Results...</h5>
             <div class="results-grid">
                 <% results.forEach(function(result) { %>
                     <div class="oneAnimeResult">
-                        <h4>
+                        <h3>
                             <a href="/animeSearch/<%=result.id%>"><%= result.attributes.titles.en_jp %></a>
-                        </h4>
+                        </h3>
                         <img src="<%=  result.attributes.posterImage.tiny %>" alt="post of searched anime">
                         <br>
+                        <div class="synopsisBox">
                         <small style="color:palegoldenrod"><%= result.attributes.synopsis %> </small>
+                        </div>
                         <br>
-                        <small style="color:yellowgreen">Average Rating:<%= result.attributes.averageRating %></small>
+                        <small style="color:yellowgreen">Average Rating: <%= result.attributes.averageRating %></small>
                     </div> 
                 <% }) %>
             </div>

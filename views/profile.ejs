@@ -1,5 +1,5 @@
 <h2 class="text-center" style="color: #B86EFA;"><%= currentUser.name %>'s Profile</h2>
-<h3>Bio!</h3>
+<h3 class="text-center">Bio!</h3>
 <p class="text-center" style="color: whitesmoke"><%= currentUser.biography %> </p>
 <form class="text-center" method="POST" action="/profile/<%= currentUser.id %>/?_method=PATCH ">
     <textarea name="biographyBoxes" id="bioBox" cols="30" rows="4"></textarea>
