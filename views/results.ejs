@@ -1,31 +1,54 @@
 <div
     class="bg-image"
     style="
-    background-image: url('https://i.postimg.cc/L8wLWPqP/site-Background.jpg');"
+    background-image: url('https://i.postimg.cc/L8wLWPqP/site-Background.jpg');
+    background-size: 100vh;"
+    
 >
+<style>
+    .results-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: .5fr .5fr .5fr;
+    gap: 25px 25px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "result result result"
+    "result result result"
+    "result result result"
+    "result result result";
+}
+
+.oneAnimeResult {
+    grid-area: "result";
+}
+
+
+
+
+</style>
+
 <% if(results.length == 0) {%>
     <h3>No Animes Found</h3>
     <small>Search another term</small> 
 
     <% } else {%>
         <h3 style="color:whitesmoke;">Search Results...</h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
+            <div class="results-grid">
                 <% results.forEach(function(result) { %>
-                
-                    <h4>
-                    <a href="/animeSearch/<%=result.id%>"><%= result.attributes.titles.en_jp %></a>
-                    </h4>
-                    <img src="<%=  result.attributes.posterImage.tiny %>" alt="post of searched anime">
-                    <br>
-                    <small style="color:palegoldenrod"><%= result.attributes.synopsis %> </small>
-                    <br>
-                    <small style="color:yellowgreen">Average Rating:<%= result.attributes.averageRating %> </small>
-                
-                <% }) %> 
-                </div>
+                    <div class="oneAnimeResult">
+                        <h4>
+                            <a href="/animeSearch/<%=result.id%>"><%= result.attributes.titles.en_jp %></a>
+                        </h4>
+                        <img src="<%=  result.attributes.posterImage.tiny %>" alt="post of searched anime">
+                        <br>
+                        <small style="color:palegoldenrod"><%= result.attributes.synopsis %> </small>
+                        <br>
+                        <small style="color:yellowgreen">Average Rating:<%= result.attributes.averageRating %></small>
+                    </div> 
+                <% }) %>
             </div>
-        </div>
+        
     <% }  %> 
 </div>
+
