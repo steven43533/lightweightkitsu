@@ -1,7 +1,21 @@
+<div
+    class="bg-image"
+    style="
+        background-image: url('https://i.postimg.cc/L8wLWPqP/site-Background.jpg');
+        background-size: 100vh;"
+>
+
 <h1>
     <%= animeTitle %>
 </h1>
-<img src="<%= poster %> " alt="poster of anime">
+
+    <h2 style="color:blueviolet">Status: <small><%= status %></small> </h2>
+    <h4 style="color:yellowgreen">Average Rating: <%= avgRating %> </h4>
+    <small style="color: whitesmoke;">Episode Count: <%= epCount %> </small>
+<div class="d-flex align-items-center justify-content-center">
+    <img src="<%= poster %> " alt="poster of anime">
+    <p style="color: yellowgreen;"><%= synopsis %> </p>
+</div>
 
 <% if (currentUser) {%> 
 <form method="POST" action="/favoritedAnime/addAsFavorite">
@@ -23,15 +37,9 @@
 </form>
 <% } %> 
 
-<h2>Status: <small><%= status %></small> </h2>
-
-<small>Episode Count: <%= epCount %> </small>
-<h3>Average Rating: </h3>
-<%= avgRating %> 
-<h2>Synopsis: </h2>
-<p><%= synopsis %> </p>
 
 
 
+</div>
 
 

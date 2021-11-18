@@ -5,17 +5,41 @@
     background-size: 100vh;"
     
 >
-<h1>Your Want To Watch List!</h1>
+<style>
+    .results-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: .5fr .5fr .5fr;
+    gap: 25px 25px;
+    margin-left: 100px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "result result result"
+    "result result result"
+    "result result result"
+    "result result result";
+}
 
-<% results.forEach(result => { %>
+.oneAnimeResult {
+    grid-area: "result";
+}
 
-    <img src="<%=result.posterImage%>" alt="post of searched anime">
-    <h3>
-        <a href="/animeSearch/<%= result.animeId %> "> <%= result.name %> </a>
-    </h3>
-    <form action="/watchlist/<%= result.id %>?_method=DELETE" method="POST">
-        <button type="submit">Remove from Want To Watch List</button>
-    </form>
-<% }) %>
+</style>
+
+<h1 class="text-center">Your Want To Watch List</h1>
+
+<div class="results-grid">
+    <% results.forEach(result => { %>
+        <div class="oneAnimeResult">
+            <img src="<%=result.posterImage%>" alt="post of searched anime">
+            <h3>
+                <a href="/animeSearch/<%= result.animeId %> "> <%= result.name %> </a>
+            </h3>
+            <form action="/watchlist/<%= result.id %>?_method=DELETE" method="POST">
+                <button type="submit">Remove from Want To Watch List</button>
+            </form>
+        </div>
+    <% }) %>
+</div>
 
 </div>
