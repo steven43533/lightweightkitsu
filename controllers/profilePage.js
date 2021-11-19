@@ -4,19 +4,19 @@ const db = require('../models')
 
 
 
-router.get('/', (req, res) => {
+exports.renderProfilePage = (req, res) => {
     res.render("profile")
-})
+}
 
 // I have a 50% understanding of how I got this work, but it works
 // ¯\_(ツ)_/¯
-router.patch('/:id', (req,res) => {
+exports.updateBio = (req,res) => {
     const bioBox = JSON.parse(JSON.stringify(req.body))
     Object.keys(bioBox).forEach(function (key) {
         let actualBio = bioBox[key]
-        console.log(actualBio);
+        // console.log(actualBio);
         const profileId = res.locals.currentUser.id
-        console.log(profileId);
+        // console.log(profileId);
         let bioValue = { biography: actualBio}
         let selector = {
             where:{ id: profileId }
@@ -30,11 +30,9 @@ router.patch('/:id', (req,res) => {
             console.log(error)
         })
         .finally(created => {
-            console.log("Added biography", created)
+            // console.log("Added biography", created)
         })
         })
-})
+}
 // ¯\_(ツ)_/¯
 
-
-module.exports = router

@@ -1,9 +1,7 @@
-const express = require('express')
-const router = express.Router()
 const db = require('../models')
 
 // index route to show all the users favorites 
-router.get('/', (req,res) =>{
+exports.currentUsersFavorites = (req,res) =>{
     db.faveAnime.findAll({
         where: { userId: res.locals.currentUser.id }
     })
@@ -14,9 +12,9 @@ router.get('/', (req,res) =>{
         .catch(error => {
             console.log(error);
         })
-})
-
-router.post('/addAsFavorite', (req,res) => {
+}
+// add current users favorite to db
+exports.addToFavoritesDB = (req,res) => {
     const data = JSON.parse(JSON.stringify(req.body))
     console.log('this is anime data', data);
     db.faveAnime.create({
@@ -37,9 +35,10 @@ router.post('/addAsFavorite', (req,res) => {
     .finally(created => {
         console.log(created);
     })
-})
+}
 
-router.delete('/:id', (req,res) => {
+// remove currentusers favorited anime from db/list
+exports.removeFromDBandFaveList = (req,res) => {
     db.faveAnime.destroy({
         where: {id: req.params.id}
     })
@@ -50,6 +49,4 @@ router.delete('/:id', (req,res) => {
     .catch(error => {
         console.log(error);
     })
-})
-
-module.exports = router
+}

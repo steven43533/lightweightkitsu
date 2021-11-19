@@ -54,13 +54,13 @@ app.get('/', (req, res)=>{
 app.use('/animeSearch', require('./routes/animeRoutes'))
 
 // route for favorite animes
-app.use('/favoritedAnime', require('./controllers/animeFaves'))
+app.use('/favoritedAnime', require('./routes/animeFaves'))
 
 // route for watch list
 app.use('/watchlist', require('./controllers/watchList'))
 
 // route for profile
-app.use('/profile', require('./controllers/profilePage'))
+app.use('/profile', require('./routes/profilePage'))
 
 // profile route
 app.get('/profile', isLoggedIn, (req, res)=>{
