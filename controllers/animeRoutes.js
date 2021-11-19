@@ -1,8 +1,6 @@
-const express = require('express')
-const router = express.Router()
 const axios = require('axios')
 
-router.get('/results', function(req,res) {
+exports.getSearchResults = (req,res) => {
     let animeTitle = req.query.animeTitle
     axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${animeTitle}`)
     .then(apiResults => {
@@ -13,9 +11,9 @@ router.get('/results', function(req,res) {
     .catch(err => {
         console.log(err);
     })
-})
+}
 
-router.get('/:anime_id', function(req,res) {
+exports.getAnimeById =  (req,res) => {
     let animeId = req.params.anime_id
 
     axios.get(`https://kitsu.io/api/edge/anime/${animeId}`)
@@ -47,8 +45,4 @@ router.get('/:anime_id', function(req,res) {
         .catch(err => {
             console.log(err);
         })
-})
-
-
-
-module.exports = router
+}

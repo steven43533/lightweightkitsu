@@ -51,7 +51,7 @@ app.get('/', (req, res)=>{
 })
 
 // route to that leads to a page showing searched anime
-app.use('/animeSearch', require('./controllers/animeRoutes'))
+app.use('/animeSearch', require('./routes/animeRoutes'))
 
 // route for favorite animes
 app.use('/favoritedAnime', require('./controllers/animeFaves'))
