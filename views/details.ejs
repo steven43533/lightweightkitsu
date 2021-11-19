@@ -5,41 +5,47 @@
         background-size: 100vh;"
 >
 
-<h1>
-    <%= animeTitle %>
-</h1>
+    <h1>
+        <%= animeTitle %>
+    </h1>
 
-    <h2 style="color:blueviolet">Status: <small><%= status %></small> </h2>
-    <h4 style="color:yellowgreen">Average Rating: <%= avgRating %> </h4>
-    <small style="color: whitesmoke;">Episode Count: <%= epCount %> </small>
-<div class="d-flex align-items-center justify-content-center">
-    <img src="<%= poster %> " alt="poster of anime">
-    <p style="color: yellowgreen;"><%= synopsis %> </p>
-</div>
+    <h2 style="color:blueviolet">
+        Status: <small><%= status %></small>
+    </h2>
+    <h4 style="color:yellowgreen">
+        Average Rating: <%= avgRating %>
+    </h4>
+    <small style="color: whitesmoke;">
+        Episode Count: <%= epCount %>
+    </small>
 
-<% if (currentUser) {%> 
-<form method="POST" action="/favoritedAnime/addAsFavorite">
-    <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
-    <input hidden type="text" name="animeId" value='<%= animeId %>'>
-    <input hidden type="text" name="poster" value='<%= poster %>'>
-    <input hidden type="text" name="avgRating" value='<%= avgRating %>'>
-    <input hidden type="text" name="favoritesCount" value='<%= favoritesCount %>'>
-    <input hidden type="text" name="startDate" value='<%= startDate %>'>
-    <input hidden type="text" name="endDate" value='<%= endDate %>'>
-    <button type="submit">Add to your favorites!</button>
-</form>
-<form method="POST" action="/watchlist/addToWatchList">
-    <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
-    <input hidden type="text" name="animeId" value='<%= animeId %>'>
-    <input hidden type="text" name="synopsis" value='<%= synopsis %>'>
-    <input hidden type="text" name="poster" value='<%= poster %>'>
-    <button type="submit">Want To Watch!</button>
-</form>
-<% } %> 
-
-
-
-
+    <div class="d-flex align-items-center justify-content-center">
+        <img src="<%= poster %> " alt="poster of anime">
+        <div class="synopsisBoxAndBtns text-center">
+            <p style="color: yellowgreen;"><%= synopsis %>
+                <% if (currentUser) {%> 
+                    <form method="POST" action="/favoritedAnime/addAsFavorite">
+                        <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
+                        <input hidden type="text" name="animeId" value='<%= animeId %>'>
+                        <input hidden type="text" name="poster" value='<%= poster %>'>
+                        <input hidden type="text" name="avgRating" value='<%= avgRating %>'>
+                        <input hidden type="text" name="favoritesCount" value='<%= favoritesCount %>'>
+                        <input hidden type="text" name="startDate" value='<%= startDate %>'>
+                        <input hidden type="text" name="endDate" value='<%= endDate %>'>
+                        <button type="submit">Add to your favorites!</button>
+                    </form>
+                    <form method="POST" action="/watchlist/addToWatchList">
+                        <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
+                        <input hidden type="text" name="animeId" value='<%= animeId %>'>
+                        <input hidden type="text" name="synopsis" value='<%= synopsis %>'>
+                        <input hidden type="text" name="poster" value='<%= poster %>'>
+                        <button type="submit">Want To Watch!</button>
+                    </form>
+                    <% } %> 
+                </p>
+        </div>
+        
+    </div>
 </div>
 
 
