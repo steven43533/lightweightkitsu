@@ -1,9 +1,8 @@
 const express = require('express')
-const router = express.Router()
 const db = require('../models')
 
 // index route to show the users want to watch list 
-router.get('/', (req,res) =>{
+exports.currentUserWatchlist = (req,res) =>{
     db.wantToWatch.findAll({
         where: { userId: res.locals.currentUser.id }
     })
@@ -14,10 +13,10 @@ router.get('/', (req,res) =>{
         .catch(error => {
             console.log(error);
         })
-})
+}
 
 // posts selected anime to want to watch list
-router.post('/addToWatchList', (req,res) => {
+exports.addToCurrentUserWatchlist = (req,res) => {
     const data = JSON.parse(JSON.stringify(req.body))
     console.log('this is anime data', data);
     db.wantToWatch.create({
@@ -36,9 +35,9 @@ router.post('/addToWatchList', (req,res) => {
     .finally(created => {
         console.log(created);
     })
-})
+}
 
-router.delete('/:id', (req,res) => {
+exports.deleteFromCurrentUserWatchlist = (req,res) => {
     db.wantToWatch.destroy({
         where: {id: req.params.id}
     })
@@ -49,7 +48,5 @@ router.delete('/:id', (req,res) => {
     .catch(error => {
         console.log(error);
     })
-})
+}
 
-
-module.exports = router

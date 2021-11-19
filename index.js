@@ -57,7 +57,7 @@ app.use('/animeSearch', require('./routes/animeRoutes'))
 app.use('/favoritedAnime', require('./routes/animeFaves'))
 
 // route for watch list
-app.use('/watchlist', require('./controllers/watchList'))
+app.use('/watchlist', require('./routes/watchList'))
 
 // route for profile
 app.use('/profile', require('./routes/profilePage'))
@@ -69,5 +69,5 @@ app.get('/profile', isLoggedIn, (req, res)=>{
 
 
 app.listen(3000, ()=>{
-    console.log("auth_practice running on port 3000 💖")
+    console.log("Hello Weeb 💖")
 })

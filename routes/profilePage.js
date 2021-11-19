@@ -7,4 +7,5 @@ const updateBioModule = require('../controllers/profilePage.js')
 router.get('/', renderProfilePageModule.renderProfilePage)
 
 router.patch('/:id', updateBioModule.updateBio)
+
 module.exports = router
