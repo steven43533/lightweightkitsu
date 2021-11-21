@@ -2,17 +2,7 @@
 Project Description and Pitch Guidelines for SEIR SEA P2
 
 ---
-## Project 2 Goals
 
-In your second project you will create a full stack Express and Postgres app which has:
-- *At least x2 models, and utilize and build at least one relationship between the two models.*
-- *Sequelize as an ORM to interact with and create your database.*
-- *An Express server utilizing EJS/EJS layouts for UI design and styling.*
-- *Interaction with and inclusion of at least one API.*
-
-## Project 2 Pitch Guidelines
-
-In designing and building your project, you will start by forking and cloneing this repository, and then editing this README to include the following information: 
 1. LightweightKitsu
 2. PEN
 3. Simple wireframes: 
@@ -38,17 +28,26 @@ returns the anime with the title of samurai champloo(Tested with Postman)
 10. Any potential roadblocks?
 * I think reading through the API docs and understanding how it works will be my first hurdle.
 
-## How to get started
-1. **Fork and clone this repository.**
-2. **Edit the text above to include specifics of your project.**
-3. **Commit, push, and submit a pull request to this repo with your edited pitch README.**
-4. *After you have met with a staff member and your pitch has been approved, suggested next steps:*
-      * Write out your routes and create a RESTful routing chart.
-      * Come up with a breakdown of what you plan to accomplish each day and how you are going to accomplish it.
-      * Create a new git repo for your project. 
-      * Make all test API calls you need to to ensure your API will be usable for this project. 
+
+
+# How to use:
+1. On home page/landing page:
+      ### Users of site can only add/favorite if they are signed in.
+      * You can create an account or login to an existing account:  
+      * Use search bar and type in anime title(can be complete title or incomplete)
+      * Upon search results you can click on the anime titles for further details.
       
+2. On details page of clicked anime title:
+      * You can view a few more details of the anime 
+      * Add to favorites or wishlist button 
 
+3. On profile page: 
+      * You can update your biography and see it update as soon as you click.
+      * Bio is saved to DB and each account created can have their own unique bio.
 
+4. On favorites page: 
+      * Delete anime from your favorites page
+      * Favorites page is unique to signed in account
 
-
+5. On want to wishlist page:
+      * Same as favorites page

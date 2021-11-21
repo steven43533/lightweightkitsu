@@ -32,14 +32,14 @@
                         <input hidden type="text" name="favoritesCount" value='<%= favoritesCount %>'>
                         <input hidden type="text" name="startDate" value='<%= startDate %>'>
                         <input hidden type="text" name="endDate" value='<%= endDate %>'>
-                        <button type="submit">Add to your favorites!</button>
+                        <button type="submit" class="btn btn-info">Add to your favorites!</button>
                     </form>
                     <form method="POST" action="/watchlist/addToWatchList">
                         <input hidden type="text" name="animeTitle" value='<%= animeTitle %>'>
                         <input hidden type="text" name="animeId" value='<%= animeId %>'>
                         <input hidden type="text" name="synopsis" value='<%= synopsis %>'>
                         <input hidden type="text" name="poster" value='<%= poster %>'>
-                        <button type="submit">Want To Watch!</button>
+                        <button type="submit" class="btn btn-light">Want To Watch!</button>
                     </form>
                     <% } %> 
                 </p>
