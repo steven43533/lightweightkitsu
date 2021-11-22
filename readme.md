@@ -51,3 +51,18 @@ returns the anime with the title of samurai champloo(Tested with Postman)
 
 5. On want to wishlist page:
       * Same as favorites page
+
+* HTTP METHODS/ROUTES CHART: 
+
+| VERB   | URL                 | CRUD ACTION | DESCRIPTION                                        |  |
+| ------ | ------------------- | ----------- | -------------------------------------------------- |  |
+| GET    | /results            | INDEX(READ) | Gets the search results of query                   |  |
+| GET    | /:anime\_id         | INDEX(READ) | Gets the specific anime ID                         |  |
+| GET    | /favoritedAnime     | READ        | Gets all the current users favorite anime          |  |
+| POST   | /addAsFavorite      | CREATE      | Adds an anime to your favorites page               |  |
+| DELETE | /favoritedAnime/:id | DESTROY     | Deletes specific anime by the associated unique ID |  |
+| GET    | /profile            | READ        | Leads to users profile page                        |  |
+| PATCH  | /profile/:id        | UPDATE      | Allows user to update their bio                    |  |
+| GET    | /watchlist          | READ        | Gets users watchlist                               |  |
+| POST   | /addToWatchList     | CREATE      | Allows user to add anime to their watchlist        |  |
+| DELETE | /watchlist/:id      | DESTROY     | Remove an anime from a users watchlist             |
